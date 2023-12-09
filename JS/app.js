@@ -5,7 +5,7 @@ LOGIC3 = "https://prod-54.northeurope.logic.azure.com/workflows/e2fa36d53c1f44dc
 LOGIC6 = "https://prod-53.northeurope.logic.azure.com/workflows/f900134160924c7f85cac21da1c1a893/triggers/manual/paths/invoke/rest/v1/videodata/";
 LOGIC61 = "?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=NDZnJyHW1z-S5icCy7OcJUOVcjmCt9K0tBLR-UfhYUM";
 
-BLOB_ACCOUNT = "https://hopethatstorage.blob.core.windows.net";
+BLOB_ACCOUNT = "https://gkbstorage.blob.core.windows.net";
 
 //Handlers for button clicks
 $(document).ready(function() {
