@@ -11,10 +11,10 @@ BLOB_ACCOUNT = "https://gkbstorage.blob.core.windows.net/";
 $(document).ready(function() {
 
  
-  $("#retVidID").click(function(){
+  $("#retvidID").click(function(){
 
       //Run the get asset list function
-      getVideoID();
+      getvideoID();
 
   }); 
 
@@ -64,17 +64,17 @@ function submitNewAsset(){
  processData: false,
  type: 'POST',
  success: function(data){
- getVideoID();
+ getvideoID();
  }
  });
  
 })};
 
 //A function to get a list of all the assets and write them to the Div with the AssetList Div
-function getVideoID(){
+function getvideoID(){
 
   //Replace the current HTML in that div with a loading message
-  $('#VideoIDList').html('<div class="spinner-border" role="status"><span class="sr-only"> &nbsp;</span>');
+  $('#videoIDList').html('<div class="spinner-border" role="status"><span class="sr-only"> &nbsp;</span>');
 
   $.getJSON(LOGIC3, function( data ) {
 
@@ -102,13 +102,13 @@ function getVideoID(){
      });
 
       //Clear the assetlist div 
-      $('#VideoIDList').empty();
+      $('#videoIDList').empty();
 
       //Append the contents of the items array to the ImageList Div
       $( "<ul/>", {
        "class": "my-new-list",
        html: items.join( "" )
-     }).appendTo( "#VideoIDList" );
+     }).appendTo( "#videoIDList" );
    });
 }
 
@@ -121,7 +121,7 @@ function deleteAsset(id){
     url: LOGIC6 + id + LOGIC61,
     }).done(function( msg ) {
     //On success, update the assetlist.
-    getVideoID();
+    getvideoID();
     });
     
 }
