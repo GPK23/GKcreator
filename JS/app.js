@@ -11,10 +11,10 @@ BLOB_ACCOUNT = "https://hopethatstorage.blob.core.windows.net";
 $(document).ready(function() {
 
  
-  $("#retImages").click(function(){
+  $("#retVidID").click(function(){
 
       //Run the get asset list function
-      getImages();
+      getVideoID();
 
   }); 
 
@@ -64,17 +64,17 @@ function submitNewAsset(){
  processData: false,
  type: 'POST',
  success: function(data){
- getImages();
+ getVideoID();
  }
  });
  
 })};
 
 //A function to get a list of all the assets and write them to the Div with the AssetList Div
-function getImages(){
+function getVideoID(){
 
   //Replace the current HTML in that div with a loading message
-  $('#ImageList').html('<div class="spinner-border" role="status"><span class="sr-only"> &nbsp;</span>');
+  $('#VideoIDList').html('<div class="spinner-border" role="status"><span class="sr-only"> &nbsp;</span>');
 
   $.getJSON(LOGIC3, function( data ) {
 
@@ -102,13 +102,13 @@ function getImages(){
      });
 
       //Clear the assetlist div 
-      $('#ImageList').empty();
+      $('#VideoIDList').empty();
 
       //Append the contents of the items array to the ImageList Div
       $( "<ul/>", {
        "class": "my-new-list",
        html: items.join( "" )
-     }).appendTo( "#ImageList" );
+     }).appendTo( "#VideoIDList" );
    });
 }
 
@@ -121,7 +121,7 @@ function deleteAsset(id){
     url: LOGIC6 + id + LOGIC61,
     }).done(function( msg ) {
     //On success, update the assetlist.
-    getImages();
+    getVideoID();
     });
     
 }
